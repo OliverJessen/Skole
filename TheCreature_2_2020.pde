@@ -2,7 +2,7 @@
 //
 //Opgave 1: Læs programmet med en ven og find ud af hvordan koden fungerer (done)
 //Opgave 2: Boldens øjne bevæger sig og forstørres forkert. Det skal rettes (Man går til linje 10 og 11 og ændrer int til float. Du gør dette fordi int kan ikke gange med kommatal, og zoomFactor's værdi er et kommatal, siden at det skal blive større hele tiden.
-//Opgave 3: Bolden hopper ikke op og ned. Det skal fikses (hint: se ballwalk) (Jeg fjernede // fra ballwalk og ændrede ballX fra int til float, fordi at int ikke kan gange med kommatal og float kan. Derefter skrev jeg ballX =)
+//Opgave 3: Bolden hopper ikke op og ned. Det skal fikses (hint: se ballwalk) (Jeg fjernede // fra ballwalk og ændrede ballX fra int til float, fordi at int ikke kan gange med kommatal og float kan.)
 //Opgave 4: Skriv kode-kommentarer, der forklarer dine rettelser og upload til gitHub.
 //Opgave 5: Aflever dokument med link på lectio (lectio registrerer ikke en kommentar som aflevering)
 
