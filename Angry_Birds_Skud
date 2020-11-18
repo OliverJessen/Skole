@@ -1,0 +1,76 @@
+float x0 = 100; //start x for cirklen
+float y0 = 350; //start y for cirklen
+
+float x; //cirklens x
+float y; //cirklens y
+
+float l; //længden der bliver trukket i fra startpunktet
+float g; //tyngdekraften
+float v; //vinklen af skuddet ift. vandret
+float t; //tid
+
+boolean skud = false; //vi kan gøre skuddet falsk, så de værdier vi har kun bruges når vi klikker på musen.
+
+void setup(){
+ size(900,500); 
+
+
+}
+
+void draw(){
+  clear();
+  
+  if(skud == false){
+  ellipse(x0,y0,15,15); 
+  } //eksempel af boldens placering når det er falsk.
+  
+  if(skud == true){
+  ellipse(x,y,15,15); 
+  } //eksempel af boldens placering når det er sandt.
+  
+  stroke(255);
+  rect(90,355,20,150); //stangen som bolden ligger på.
+  line(mouseX,mouseY,x0,y0);
+  
+  float a = mouseY - y0;
+  float b = mouseX - x0;
+  if(skud == false){
+   v = atan(a/b);
+  }
+  
+  if(skud == false){
+   l = dist(mouseX,mouseY,x0,y0)/10; //distancen fra startpunktet og musen.
+  }
+
+  text("a = " + a + " b = " + b,10,20);
+  text("v = " + degrees(v),10,40);
+  text("l = " + l,10,60);
+  text("t = " + t,10,80);
+  
+  if(skud == true){
+   beregnKast(); //har lavet vores egen void til kastet.
+  }
+}
+
+void mousePressed(){
+  skud = true;
+}
+
+void beregnKast(){
+ t = t + 0.09;
+ 
+float E; //Skuddets affyringsenergi
+float A; //Skuddets affyringshældning
+
+ E = 0.5 * 100 * l * l;
+ A = tan(v);
+ 
+float m = 1; //Fuglens masse
+float u0 = sqrt( (2*E) / (m*(1+A*A)) ); //Affyringshastighed for x
+float v0 = A * (sqrt( (2*E) / (m*(1+A*A)) )); //Affyringshastighed for y
+float g = -9.82;
+
+x = u0 * t + x0; //formlen for x-værdien
+y = -0.5 * g * t * t + v0 * t + y0; //formlen for y-værdien
+
+}
