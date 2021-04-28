@@ -24,11 +24,15 @@ class Knap {
     strokeWeight(s);
     fill(c);
     rect(x, y, w, h);
-    
-    if(isActive == true) {
-      s = 5;
-    }
-    
+
+    /* if(isActive) {
+       s = 5;
+       
+     }
+     else {
+       s = 0; 
+     }
+     */
     pop();
   }
 
