@@ -1,0 +1,7 @@
+class Ko extends Dyr {
+  
+  
+  
+  
+  
+}
