@@ -15,8 +15,8 @@ class Planter {
     PlanteWidth = PlanteWidth + growthSpeed;
     PlanteHeight = PlanteHeight + growthSpeed;
     
-     if(PlanteWidth >= 100 && PlanteHeight >= 100) {
-       growthSpeed = 0;
+   if(PlanteWidth >= 100 && PlanteHeight >= 100) {
+     growthSpeed = 0;
    }
  }
   
