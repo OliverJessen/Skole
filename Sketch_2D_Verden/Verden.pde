@@ -91,7 +91,7 @@ void lavSvamp() {
     
      }  
      
-    if(dyreListe.size() > 60) {
+    if(dyreListe.size() > 100) {
     dyreListe.remove(0);
     }
    } 
