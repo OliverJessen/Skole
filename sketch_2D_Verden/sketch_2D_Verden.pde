@@ -1,59 +1,47 @@
-ArrayList<Dyr> dyreListe = new ArrayList <Dyr>();
+Verden v = new Verden();
+Dyr d = new Dyr();
+Planter p = new Planter();
+Terrain t = new Terrain();
 
-PImage baggrund;
-
-boolean isActive = false;
-
-Verden verden = new Verden();
-Tabel tabel = new Tabel();
-Dyr dyr = new Dyr();
-
-void setup() {
-
-  size(800, 700);
-  baggrund = loadImage("Grass_Background.png");
-  frameRate(24);
-}
-
-void draw() {
-
-  baggrund.resize(width, height);
-  image(baggrund, 0, 0);
-
-  verden.display();
-
- for(Dyr d : dyreListe) { 
-    d.display();
-    d.move();
-  }   
-  if(dyreListe.size() > 10) {
-    dyreListe.remove(0);
+  void setup() {
+   size(800, 700);
   }
-}
 
-
-
-
-class Verden {
-
-  void display() {
-
-    tabel.display();
-    tabel.keyPressed();
-    
-    dyr.display();
-    dyr.move();
-    
+  void draw() {
+    clear();
+    background(80);
+   
+    v.opdaterTerrain();
+    v.opdaterPlanter();
+    v.opdaterDyr();
+    v.collision();
+    v.mousePressed();
+    v.overview();
   }
-}
-
-void mousePressed() {
   
-   //{ dyreListe.add(new Kat());  }
-  // if(key == '2'){ dyreListe.add(new Hest());  }
-  // if(key == '3'){ dyreListe.add(new Gris());  }
-  
- if(dyreListe.size() != 0) {
-  dyreListe.remove(dyreListe.size()-1);
-  }
-}
+  void keyPressed() {
+    
+   if(key == '1') {  
+   v.lavKat();
+   }
+   
+   if(key == '2') {
+   v.lavKo(); 
+   }
+   
+   if(key == '3') {
+   v.lavBlomst();
+   }
+   
+   if(key == '4') {
+   v.lavTrae();  
+   }
+   
+   if(key == '5') {
+   v.lavBusk();  
+   }
+   
+   if(key == '6') {
+   v.lavSvamp(); 
+   }
+ }
