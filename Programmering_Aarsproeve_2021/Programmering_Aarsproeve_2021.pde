@@ -4,7 +4,8 @@ Planter p = new Planter();
 Terrain t = new Terrain();
 
   void setup() {
-   size(800, 700);
+   size(800,700);
+   surface.setResizable(true);
   }
 
   void draw() {

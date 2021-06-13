@@ -2,16 +2,13 @@ class Terrain {
   
   float x;
   float y;
-  float TerrainWidth = 80;
-  float TerrainHeight = 80;
+  float TerrainWidth = 120;
+  float TerrainHeight = 120;
   PImage img;
   
   void display() {
   }
   
   void effect() {
-    
-   
-  
    }
   }
