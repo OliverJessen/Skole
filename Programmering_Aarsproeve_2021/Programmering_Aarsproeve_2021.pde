@@ -4,7 +4,7 @@ Planter p;
 Terrain t;
 
   void setup() {
-   v  = new Verden();
+   v  = new Verden(); //laver et objekt ud af alle klasserne, der indeholder et sæt af variabler med værdier og funktioner.
    d = new Dyr();
    p = new Planter();
    t = new Terrain();
