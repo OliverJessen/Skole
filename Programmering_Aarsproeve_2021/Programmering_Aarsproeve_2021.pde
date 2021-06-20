@@ -23,7 +23,7 @@ Terrain t;
     v.overview();
   }
   
-  void keyPressed() {
+  void keyPressed() { //hvis man klikker på en af tasterne vil man lave et nyt dyr/planter/terræn.
     
    if(key == '1') { v.lavKat(); }
    if(key == '2') { v.lavKo(); }

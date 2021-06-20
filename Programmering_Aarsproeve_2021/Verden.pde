@@ -13,27 +13,23 @@ PImage swamp;
 PImage flower;
 
 void mousePressed() { //kan slette manuelt dyrene fra ArrayListen dyreListe hvis det skulle være.
-  if(mousePressed && dyreListe.size() != 0) {
-  dyreListe.remove(0);
-  }
+  if(mousePressed && dyreListe.size() != 0) { dyreListe.remove(0); }
 }
 
 void overview() { //holder styr over hvor mange styks indenfor de forskellige arter der er.
   if(dyreListe.size() != 0) {
     text("der er " + dyreListe.size() + " dyr lige nu", 20,20); 
-  } else {text("der er ingen dyr lige nu", 20,20);
- }
+  } else {text("der er ingen dyr lige nu", 20,20); }
   if(planteListe.size() != 0) {
     text("der er " + planteListe.size() + " planter lige nu", 20,40); 
-  } else {text("der er ingen planter lige nu", 20,40);
- }
+  } else {text("der er ingen planter lige nu", 20,40); }
  if(terrainListe.size() != 0) {
     text("der er " + terrainListe.size() + " terræner lige nu", 20,60); 
-  } else {text("der er ingen terræner lige nu", 20,60);
- }
+  } else {text("der er ingen terræner lige nu", 20,60); }
+
 }
-void lavKat() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en kat på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
-  
+
+void lavKat() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en kat på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed(). 
   Kat k = new Kat();
   k.x = mouseX;
   k.y = mouseY;
@@ -41,7 +37,6 @@ void lavKat() { //Denne funktion er med til at programmere hvorhenne man skal "l
 }
 
 void lavKo() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en ko på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
-  
   Ko c = new Ko();
   c.x = mouseX;
   c.y = mouseY;
@@ -49,7 +44,6 @@ void lavKo() { //Denne funktion er med til at programmere hvorhenne man skal "la
 }
 
 void lavTrae() { //Denne funktion er med til at programmere hvorhenne man skal "lave" et træ på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
-  
   Trae t = new Trae();
   t.x = mouseX;
   t.y = mouseY;
@@ -57,7 +51,6 @@ void lavTrae() { //Denne funktion er med til at programmere hvorhenne man skal "
 }
 
 void lavBlomst() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en blomst på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
-  
   Blomst b = new Blomst();
   b.x = mouseX;
   b.y = mouseY;
@@ -72,7 +65,6 @@ void lavBusk() { //Denne funktion er med til at programmere hvorhenne man skal "
 }
 
 void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en svamp på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
-  
   Svamp s = new Svamp();
   s.x = mouseX;
   s.y = mouseY;
@@ -85,13 +77,12 @@ void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal 
     for(Dyr d : dyreListe) { 
     d.display();
     d.move(); 
-    
-     }  
+    }  
      
     if(dyreListe.size() > 100) { // hvis ArrayListen bliver for stor, vil den automatisk slette den første der blev kaldt.
     dyreListe.remove(0);
-    }
-   } 
+    }   
+ } 
    
   void opdaterPlanter() { // i denne funktion referencerer jeg til Planter klassen, og kalder på klassens display() og growth().
     
@@ -123,9 +114,9 @@ void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal 
      for(Dyr d : dyreListe) {
        if(d.y < t.y + (t.TerrainHeight - t.TerrainHeight/2) - 20 && d.x < t.x + (t.TerrainWidth - t.TerrainWidth/2) - 20) {
          if(d.y > t.y - (t.TerrainHeight - t.TerrainHeight/2) - 20 && d.x > t.x - (t.TerrainWidth - t.TerrainWidth/2) - 20) {
-        d.speedX *= 0.5;
-        d.speedY *= 0.5;
-       } else {}
+          d.speedX *= 0.5;
+          d.speedY *= 0.5;
+         } else {}
        }  
      }
    }  
