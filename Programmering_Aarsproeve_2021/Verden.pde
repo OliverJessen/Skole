@@ -12,13 +12,13 @@ PImage cat;
 PImage swamp;
 PImage flower;
 
-void mousePressed() { //kan slette manuelt
+void mousePressed() { //kan slette manuelt dyrene fra ArrayListen dyreListe hvis det skulle være.
   if(mousePressed && dyreListe.size() != 0) {
   dyreListe.remove(0);
   }
 }
 
-void overview() { //holder styr over hvor mange der er.
+void overview() { //holder styr over hvor mange styks indenfor de forskellige arter der er.
   if(dyreListe.size() != 0) {
     text("der er " + dyreListe.size() + " dyr lige nu", 20,20); 
   } else {text("der er ingen dyr lige nu", 20,20);
@@ -117,7 +117,7 @@ void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal 
     
   }
   
-  void collision() { //Her siger jeg at for hvert terræn og for hvert dyr, hvis x og y-værdierne mellem de to objekter bliver mindre end en vis værdi, vil farten på dyrene være langsommere.
+  void collision() { //For hvert terræn og for hvert dyr, hvis x og y-værdierne mellem de to objekter bliver mindre end en vis værdi, vil farten på dyrene være langsommere.
    
    for(Terrain t : terrainListe) {
      for(Dyr d : dyreListe) {
@@ -131,7 +131,7 @@ void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal 
    }  
  }
     
-  void billeder() { // Herinde har jeg de forskellige billeder for dyrene, som jeg bruger hver gang jeg skal lave et nyt dyr.
+  void billeder() { // Herinde har jeg de forskellige billeder for dyrene, som jeg bruger hver gang jeg skal lave et nyt dyr. Den behøver ikke at blive kaldt, den skal bare være i en funktion.
   
   tree = loadImage("Green tree.png");
   bush = loadImage("cute bush.png");
