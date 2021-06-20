@@ -1,5 +1,5 @@
 class Dyr {
-
+  // forskellige variabler og datatyper som bliver brugt at underklasserne og i funktionerne i klassen.
   float x;
   float y;
   float variable = -1;
@@ -11,13 +11,11 @@ class Dyr {
   float ySpeedOrg = random(-5,5);
   float xSpeedOrg = random(-5,5);
   
-  void display() {
+  void display() { //skal bruges så at underklasserne kan override værdierne i funktionen.
   }
   
-  void move() {
-    
-   
-    
+  void move() { // fortæller farten af ethvert dyr, og at de skal 'bounce' videre fra væg til væg.
+
     x += speedX;
     y += speedY;   
    

@@ -1,9 +1,13 @@
-Verden v = new Verden();
-Dyr d = new Dyr();
-Planter p = new Planter();
-Terrain t = new Terrain();
+Verden v;
+Dyr d;
+Planter p;
+Terrain t;
 
   void setup() {
+   v  = new Verden();
+   d = new Dyr();
+   p = new Planter();
+   t = new Terrain();
    size(800,700);
    surface.setResizable(true);
   }

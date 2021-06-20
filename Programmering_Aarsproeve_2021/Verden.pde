@@ -1,6 +1,6 @@
 class Verden {
 
-ArrayList<Dyr> dyreListe = new ArrayList <Dyr>(); //Arrayliste til alle dyr, planter og terræner. Så kan man lave flere og gøre andre ting med dem.
+ArrayList<Dyr> dyreListe = new ArrayList <Dyr>(); //Arrayliste til alle dyr, planter og terræner. Med ArrayListen kan man lave flere dyr/planter/terræn ved at tilføje til listen.
 ArrayList<Planter> planteListe = new ArrayList<Planter>();
 ArrayList<Terrain> terrainListe = new ArrayList<Terrain>();
 
@@ -11,9 +11,6 @@ PImage cow;
 PImage cat;
 PImage swamp;
 PImage flower;
-
-float speedX;
-float speedY;
 
 void mousePressed() { //kan slette manuelt
   if(mousePressed && dyreListe.size() != 0) {
@@ -35,7 +32,7 @@ void overview() { //holder styr over hvor mange der er.
   } else {text("der er ingen terræner lige nu", 20,60);
  }
 }
-void lavKat() {
+void lavKat() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en kat på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
   
   Kat k = new Kat();
   k.x = mouseX;
@@ -43,7 +40,7 @@ void lavKat() {
   dyreListe.add(k);
 }
 
-void lavKo() {
+void lavKo() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en ko på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
   
   Ko c = new Ko();
   c.x = mouseX;
@@ -51,7 +48,7 @@ void lavKo() {
   dyreListe.add(c);
 }
 
-void lavTrae() {
+void lavTrae() { //Denne funktion er med til at programmere hvorhenne man skal "lave" et træ på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
   
   Trae t = new Trae();
   t.x = mouseX;
@@ -59,7 +56,7 @@ void lavTrae() {
   planteListe.add(t); 
 }
 
-void lavBlomst() {
+void lavBlomst() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en blomst på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
   
   Blomst b = new Blomst();
   b.x = mouseX;
@@ -67,14 +64,14 @@ void lavBlomst() {
   planteListe.add(b); 
 }
 
-void lavBusk() {
+void lavBusk() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en busk på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
   Busk u = new Busk();
   u.x = mouseX;
   u.y = mouseY;
   planteListe.add(u);
 }
 
-void lavSvamp() {
+void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal "lave" en svamp på skærmen. Jeg fortæller hvad x og y-værdien skal være når jeg bruger void keyPressed().
   
   Svamp s = new Svamp();
   s.x = mouseX;
@@ -83,7 +80,7 @@ void lavSvamp() {
   
 }
 
-  void opdaterDyr() {
+  void opdaterDyr() { // i denne funktion referencerer jeg til Dyr klassen, og kalder på klassens display() og move().
     
     for(Dyr d : dyreListe) { 
     d.display();
@@ -91,37 +88,36 @@ void lavSvamp() {
     
      }  
      
-    if(dyreListe.size() > 100) {
+    if(dyreListe.size() > 100) { // hvis ArrayListen bliver for stor, vil den automatisk slette den første der blev kaldt.
     dyreListe.remove(0);
     }
    } 
    
-  void opdaterPlanter() {
+  void opdaterPlanter() { // i denne funktion referencerer jeg til Planter klassen, og kalder på klassens display() og growth().
     
     for(Planter p : planteListe) {
     p.display();
     p.growth();
     }
     
-    if(planteListe.size() > 20) {
+    if(planteListe.size() > 20) { // hvis ArrayListen bliver for stor, vil den automatisk slette den første der blev kaldt.
     planteListe.remove(0); 
     }
   }
   
-  void opdaterTerrain() {
+  void opdaterTerrain() { // i denne funktion referencerer jeg til Terrain klassen, og kalder på klassens display().
     
     for(Terrain t : terrainListe) {
     t.display();
-    t.effect();
     }
     
-    if(terrainListe.size() > 10) {
+    if(terrainListe.size() > 10) { // hvis ArrayListen bliver for stor, vil den automatisk slette den første der blev kaldt.
     terrainListe.remove(0); 
     }
     
   }
   
-  void collision() {
+  void collision() { //Her siger jeg at for hvert terræn og for hvert dyr, hvis x og y-værdierne mellem de to objekter bliver mindre end en vis værdi, vil farten på dyrene være langsommere.
    
    for(Terrain t : terrainListe) {
      for(Dyr d : dyreListe) {
@@ -134,12 +130,8 @@ void lavSvamp() {
      }
    }  
  }
-  
-  void display() {
     
-  }
-  
-  void billeder() {
+  void billeder() { // Herinde har jeg de forskellige billeder for dyrene, som jeg bruger hver gang jeg skal lave et nyt dyr.
   
   tree = loadImage("Green tree.png");
   bush = loadImage("cute bush.png");

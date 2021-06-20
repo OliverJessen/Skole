@@ -1,5 +1,5 @@
 class Terrain {
-  
+  // forskellige variabler og datatyper som bliver brugt at underklasserne og i funktionerne i klassen.
   float x;
   float y;
   float TerrainWidth = 120;
@@ -8,7 +8,4 @@ class Terrain {
   
   void display() {
   }
-  
-  void effect() {
-   }
-  }
+}
