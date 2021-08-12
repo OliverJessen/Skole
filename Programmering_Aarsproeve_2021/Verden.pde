@@ -131,4 +131,15 @@ void lavSvamp() { //Denne funktion er med til at programmere hvorhenne man skal 
   swamp = loadImage("Isspand.png");
   flower = loadImage("rose.png");
   }
+  
+  void opdaterAlt() {
+  
+    v.opdaterTerrain(); //har sat opdater-funktionerne først før collision og overview så de tegnes bagefter og ikke vises under baggrunden og de forskellige arter.
+    v.opdaterPlanter();
+    v.opdaterDyr();
+    v.collision();
+    v.mousePressed();
+    v.overview();
+  
+  }
 }

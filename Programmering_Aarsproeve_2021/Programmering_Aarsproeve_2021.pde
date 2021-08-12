@@ -15,12 +15,7 @@ Terrain t;
   void draw() {
     clear();
     background(80);
-    v.opdaterTerrain(); //har sat opdater-funktionerne først før collision og overview så de tegnes bagefter og ikke vises under baggrunden og de forskellige arter.
-    v.opdaterPlanter();
-    v.opdaterDyr();
-    v.collision();
-    v.mousePressed();
-    v.overview();
+    v.opdaterAlt();
   }
   
   void keyPressed() { //hvis man klikker på en af tasterne vil man lave et nyt dyr/planter/terræn.
