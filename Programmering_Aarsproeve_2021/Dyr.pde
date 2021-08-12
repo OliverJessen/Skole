@@ -12,10 +12,11 @@ class Dyr {
   float xSpeedOrg = random(-5,5);
   
   void display() { //skal bruges så at underklasserne kan override værdierne i funktionen.
+  int  a  =90;
   }
   
   void move() { // fortæller farten af ethvert dyr, og at de skal 'bounce' videre fra væg til væg.
-
+  
     x += speedX;
     y += speedY;   
    
