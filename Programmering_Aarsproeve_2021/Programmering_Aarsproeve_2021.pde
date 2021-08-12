@@ -1,13 +1,9 @@
-Verden v;
-Dyr d;
-Planter p;
-Terrain t;
+Verden v = new Verden(); //laver et objekt ud af alle klasserne, der indeholder et sæt af variabler med værdier og funktioner.
+Dyr d = new Dyr();
+Planter p = new Planter();
+Terrain t = new Terrain();
 
   void setup() {
-   v  = new Verden(); //laver et objekt ud af alle klasserne, der indeholder et sæt af variabler med værdier og funktioner.
-   d = new Dyr();
-   p = new Planter();
-   t = new Terrain();
    size(800,700);
    surface.setResizable(true);
   }
