@@ -16,8 +16,16 @@ void draw() {
 
 
   background(0);
-  if (random(1) < 0.05 && platforms.size() < 9) {
+  if (random(1) < 0.05) {
     platforms.add(new Platform());
+  }
+  for (int i = platforms.size() - 1; i >= 0; i--) {
+    PVector yPos = platforms.get(i).pos;
+
+    if (yPos.y <= 10) {
+      platforms.remove(i);
+      i--;
+    }
   }
 
   e.show();
