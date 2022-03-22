@@ -32,10 +32,13 @@ class Platform {
 
   void interact(Player e) {
 
-    line(e.pos.x, e.pos.y, pos.x + len/2, pos.y);
+    //line(e.pos.x, e.pos.y, pos.x + len/2, pos.y);
 
-    float d = dist(e.pos.x, e.pos.y, pos.x + len, pos.y);
+    float d = dist(e.pos.x, e.pos.y, pos.x + len/2, pos.y - e.r);
     text(d, pos.x + len/2, pos.y - 20);
+    
+    if(d < 200)
+      line(e.pos.x, e.pos.y, pos.x + len/2, pos.y);
 
     if ( e.pos.x > pos.x - e.r && e.pos.x < pos.x + len + e.r) {
       if (e.pos.y < pos.y && e.pos.y > pos.y - e.r) {

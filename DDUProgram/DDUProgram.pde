@@ -22,7 +22,7 @@ void draw() {
   for (int i = platforms.size() - 1; i >= 0; i--) {
     PVector yPos = platforms.get(i).pos;
 
-    if (yPos.y <= 10) {
+    if (yPos.y <= 0) {
       platforms.remove(i);
       i--;
     }
