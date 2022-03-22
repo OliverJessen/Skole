@@ -25,8 +25,11 @@ class Platform {
   }
 
   void update() {
+    
+    if(vel.y >= 1)
+      vel.add(new PVector(0, -0.01));
 
-    pos.add(vel);
+     pos.add(vel);
 
     if (pos.y <= 0) {
       pos = new PVector(random(10, 390), 500);
