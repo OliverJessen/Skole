@@ -7,6 +7,7 @@ class Player {
   float r = 10;
   float xdir;
   float variable;
+  
 
   Player() {
 
