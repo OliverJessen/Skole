@@ -14,7 +14,7 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   p = new Platform();
   e = new Player();
-  b = new Bullet();
+  b = new Bullet(e.pos.x,e.pos.y);
 }
 
 void draw() {
