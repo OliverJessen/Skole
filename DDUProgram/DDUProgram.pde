@@ -1,19 +1,23 @@
 Platform p;
 Player e;
+Bullet b;
+boolean shot = false;
 PVector gravity;
 ArrayList<Platform> platforms;
+ArrayList<Bullet> bullets;
 
 void setup() {
 
   size(500, 500);
   gravity = new PVector(0, 0.2);
   platforms = new ArrayList<Platform>();
+  bullets = new ArrayList<Bullet>();
   p = new Platform();
   e = new Player();
+  b = new Bullet();
 }
 
 void draw() {
-
 
   background(0);
   if (random(1) < 0.05) {
@@ -28,6 +32,17 @@ void draw() {
     }
   }
 
+  if (shot == true) {
+    bullets.add(new Bullet(e.pos.x,e.pos.y));
+  }
+
+  if (mousePressed == true) {
+    shot = true;
+  } else {
+    shot = false;
+  }
+
+
   e.show();
   e.update();
   e.applyForce(gravity);
@@ -37,7 +52,13 @@ void draw() {
     p.update();
     p.interact(e);
   }
+  for (Bullet b : bullets) {
+    b.show();
+    b.update();
+  }
 }
+
+
 
 void keyPressed() {
 
