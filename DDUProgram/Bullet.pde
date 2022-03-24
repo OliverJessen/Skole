@@ -4,25 +4,28 @@ class Bullet {
   PVector dir;
   PVector vel;
 
-  Bullet(float x1, float y1) {
-
+  Bullet() {
+    
+    float x1 = e.pos.x;
+    float y1 = e.pos.y;
     float x2 = mouseX;
     float y2 = mouseY;
 
-    pos = new PVector();
+    pos = new PVector(x1,y1);
     dir = new PVector(x2-x1, y2-y1);
-    vel = new PVector(0, 0.25);
+   
   }
 
 
-  void show() {
+  void show(Player e) {
 
-    ellipse(pos.x, pos.y, 10, 10);
+    ellipse(e.pos.x, e.pos.y, 10, 10);
   }
 
 
   void update() {
 
     pos.add(dir);
+ 
   }
 }

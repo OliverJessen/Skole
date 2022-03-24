@@ -14,26 +14,26 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   p = new Platform();
   e = new Player();
-  b = new Bullet(e.pos.x,e.pos.y);
+  b = new Bullet();
 }
 
 void draw() {
 
   background(0);
-  if (random(1) < 0.05) {
-    platforms.add(new Platform());
-  }
-  for (int i = platforms.size() - 1; i >= 0; i--) {
-    PVector yPos = platforms.get(i).pos;
+  //if (random(1) < 0.05) {
+  //  platforms.add(new Platform());
+  //}
+  //for (int i = platforms.size() - 1; i >= 0; i--) {
+  //  PVector yPos = platforms.get(i).pos;
 
-    if (yPos.y <= 0) {
-      platforms.remove(i);
-      i--;
-    }
-  }
+  //  if (yPos.y <= 0) {
+  //    platforms.remove(i);
+  //    i--;
+  //  }
+  //}
 
   if (shot == true) {
-    bullets.add(new Bullet(e.pos.x,e.pos.y));
+    bullets.add(new Bullet());
   }
 
   if (mousePressed == true) {
@@ -47,13 +47,13 @@ void draw() {
   e.update();
   e.applyForce(gravity);
 
-  for (Platform p : platforms) {
-    p.show();
-    p.update();
-    p.interact(e);
-  }
+  //for (Platform p : platforms) {
+  //  p.show();
+  //  p.update();
+  //  p.interact(e);
+  //}
   for (Bullet b : bullets) {
-    b.show();
+    b.show(e);
     b.update();
   }
 }

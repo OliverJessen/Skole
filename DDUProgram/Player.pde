@@ -7,7 +7,7 @@ class Player {
   float r = 10;
   float xdir;
   float variable;
-  
+
 
   Player() {
 
@@ -24,6 +24,7 @@ class Player {
     push();
     translate(pos.x, pos.y);
     ellipse(0, 0, r*2, r*2);
+   // ellipse(0, 0, 10, 10);
     pop();
   }
 
